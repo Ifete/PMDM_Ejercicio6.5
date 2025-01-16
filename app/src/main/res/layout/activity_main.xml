@@ -16,20 +16,24 @@
         android:id="@+id/lista"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:layout_weight="5"
-        android:backgroundTint="@color/grey">
+        android:background="@color/blue_back">
     </ListView>
 
     <TextView
         android:id="@+id/texto"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="150dp"
         android:textColor="@color/red"
         android:textStyle="bold"
         android:text="@string/toca_op"
         android:layout_weight="1"
         android:textAlignment="center"
         android:gravity="center"
+        android:background="@color/grey"
         />
 
 </LinearLayout>

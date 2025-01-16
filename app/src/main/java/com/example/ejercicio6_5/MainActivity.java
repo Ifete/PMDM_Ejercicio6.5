@@ -1,13 +1,16 @@
 package com.example.ejercicio6_5;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -25,6 +28,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Obtener el ActionBar predeterminado
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            // Modificar el título del ActionBar
+            actionBar.setTitle("PROGRAMACIÓN MULTIMEDIA");
+
+            // Opcional: Mostrar u ocultar el icono de navegación
+            actionBar.setDisplayHomeAsUpEnabled(false);
+        }
+
 
         //Asociamos los objetos
         lista = findViewById(R.id.lista);
@@ -61,9 +75,22 @@ public class MainActivity extends AppCompatActivity {
                         if (radioButton_pulsado != null) radioButton_pulsado.setChecked(false);
                         radioButton_pulsado = (RadioButton) view;
                         texto.setText(R.string.op_marc);
+                        Log.d("RADIO", "Click en RadioButton");
                     }
                 });
 
+            }
+        });
+
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Encapsulador elegido = (Encapsulador) parent.getItemAtPosition(position) ;
+                CharSequence textoElegido = "Selecionado: " + elegido.get_textoContenido();
+                texto.setText(elegido.get_textoContenido());
+                Log.d("LISTVIEW", "textoElegido: " + textoElegido);
+                Log.d("LISTVIEW", "elegido: " + elegido.toString());
+                Log.d("LISTVIEW", "elegido: " + elegido.get_textoContenido());
             }
         });
 
