@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <GridView
+        android:id="@+id/lista"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_weight="5"
+        android:numColumns="2"
+        android:background="@color/blue_back">
+    </GridView>
+
+    <TextView
+        android:id="@+id/texto"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        android:text="@string/toca_op"
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:background="@color/grey"
+        />
+
+</LinearLayout>
+
+
+
+

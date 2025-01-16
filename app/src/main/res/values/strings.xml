@@ -4,5 +4,6 @@
     <string name="toca_op">Toca una opción</string>
     <string name="txt_tit">Texto titulo</string>
     <string name="txt_dat">Texto datos</string>
+    <string name="sel">Selección</string>
     <string name="op_marc">MARCADA UNA OPCION</string>
 </resources>
