@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Ejercicio6_5</string>
+    <string name="prg_mult">PROGRAMACIÓN MULTIMEDIA</string>
+    <string name="toca_op">Toca una opción</string>
+    <string name="txt_tit">Texto titulo</string>
+    <string name="txt_dat">Texto datos</string>
+    <string name="op_marc">MARCADA UNA OPCION</string>
+</resources>

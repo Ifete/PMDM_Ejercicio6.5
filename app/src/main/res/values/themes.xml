@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Ejercicio6_5" parent="Theme.AppCompat.Light">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">#D3D3D3</item> <!-- Fondo del ActionBar -->
+        <item name="colorPrimaryDark">#A9A9A9</item> <!-- Color del status bar -->
+        <item name="colorOnPrimary">#000000</item> <!-- Color del texto y los íconos del ActionBar -->
+        <item name="android:actionBarStyle">@style/CustomActionBarStyle</item>
+
+    </style>
+
+    <style name="Theme.Ejercicio6_5" parent="Base.Theme.Ejercicio6_5" />
+</resources>
