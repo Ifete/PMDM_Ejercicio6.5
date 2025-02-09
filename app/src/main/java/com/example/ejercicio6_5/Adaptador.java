@@ -13,7 +13,8 @@ public abstract class Adaptador extends BaseAdapter {
     private int R_layout_IdView;
     private Context contexto;
 
-    public Adaptador(Context contexto, int R_layout_IdView,  ArrayList<?> entrada){
+
+    public Adaptador(Context contexto, int R_layout_IdView, ArrayList<?> entrada){
         super();
         this.contexto = contexto;
         this.entrada = entrada;

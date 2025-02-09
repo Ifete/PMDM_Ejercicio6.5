@@ -1,7 +1,10 @@
 package com.example.ejercicio6_5;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -9,12 +12,9 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 
@@ -24,6 +24,12 @@ public class MainActivity extends AppCompatActivity {
     private TextView texto;
     private RadioButton radioButton_pulsado;
 
+    //Cramo sel menú para ver los diferetnes tipos de view
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.ejer6_menu,menu);
+        return true;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
                         Log.d("RADIO", "Click en RadioButton");
                     }
                 });
-
             }
         });
 
@@ -94,13 +99,30 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
     }
 
-    public class Encapsulador{
+    //Opciones para cambiar la vista con el menu
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()) {
+            case R.id.litsView:
+                Intent abrirList = new Intent(this, MainActivity.class);
+                this.startActivity(abrirList);
+                return false;
+            case R.id.gridView:
+                Intent abrirGrid = new Intent(this, GridActivity.class);
+                this.startActivity(abrirGrid);
+                return false;
+            case R.id.spinner:
+                Intent abrirSpinner = new Intent(this, SpinnerActivity.class);
+                this.startActivity(abrirSpinner);
+                return false;
+            default:
+                return false;
+        }
+    }
+
+    public static class Encapsulador{
         private int imagen;
         private String titulo;
         private String texto;

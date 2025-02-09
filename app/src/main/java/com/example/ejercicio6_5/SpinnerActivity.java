@@ -1,7 +1,10 @@
 package com.example.ejercicio6_5;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -19,6 +22,13 @@ public class SpinnerActivity extends AppCompatActivity {
     private Spinner lista;
     private TextView texto;
     private RadioButton radioButton_pulsado;
+
+    //Cramo sel menú para ver los diferetnes tipos de view
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.ejer6_menu,menu);
+        return true;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,12 +104,29 @@ public class SpinnerActivity extends AppCompatActivity {
                 texto.setText("Toca una opción");
             }
         });
-
-
-
-
-
     }
+
+    //Opciones para cambiar la vista con el menu
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()) {
+            case R.id.litsView:
+                Intent abrirList = new Intent(this, MainActivity.class);
+                this.startActivity(abrirList);
+                return false;
+            case R.id.gridView:
+                Intent abrirGrid = new Intent(this, GridActivity.class);
+                this.startActivity(abrirGrid);
+                return false;
+            case R.id.spinner:
+                Intent abrirSpinner = new Intent(this, SpinnerActivity.class);
+                this.startActivity(abrirSpinner);
+                return false;
+            default:
+                return false;
+        }
+    }
+
 
     public class Encapsulador{
         private int imagen;
